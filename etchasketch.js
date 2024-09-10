@@ -5,11 +5,29 @@ for (let counter = 0; counter < (256); counter++) {
     let div = document.createElement("div");
     div.addEventListener("mouseover", darken);
     console.log("div created: " + counter);
-    div.setAttribute("style", "background-color:lightgrey; box-sizing:border-box; border:solid black 1px; flex:1 0 6.25%;")
+    div.setAttribute("style", "background-color:hsl(0, 0%, 95%); box-sizing:border-box; border:solid black 1px; flex:1 0 6.25%;")
     etchasketch.appendChild(div);
 };
 
 function darken(event) {
-    this.style.backgroundColor = "black";
+    let cellColor = this.style.backgroundColor;
+    let darkenAmount = 25;
+    
+    // Slices cellColor to extract single RGB value (242 to start)
+    cellColor = cellColor.slice(4,7);
+
+    // Repeat slice for only two characters once RGB value is below 100
+    if (!Number(cellColor)) {
+        cellColor = this.style.backgroundColor;
+        cellColor = cellColor.slice(4,6);
+    }
+
+    // Subtracts darkenAmount from RGB value
+    cellColor -= darkenAmount;
+
+    this.style.backgroundColor = "rgb(" + cellColor +
+        ", " + cellColor +
+        ", " + cellColor + ")";
+
     event.stopPropagation();
 }
