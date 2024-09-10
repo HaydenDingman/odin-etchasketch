@@ -6,8 +6,17 @@
 
 body {
     display:flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: red;
+
+}
+
+body h1 {
+    color:antiquewhite;
+    padding:50px 0px 0px 0px;
+    font-size: 3em;
 }
 
 .container {
@@ -15,6 +24,6 @@ body {
     flex-wrap: wrap;
     width: 1200px;
     height: 800px;
-    background-color: gray;
-    margin:100px;
+    background-color: hsl(0, 0%, 10%);
+    margin:50px;
 }
