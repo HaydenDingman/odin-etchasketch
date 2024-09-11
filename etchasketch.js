@@ -49,15 +49,14 @@ function getUserBoxNumber() {
     do {
         boxNumber = parseInt(prompt("How many squares would you like per side? (Max 100)"));
     } while (isNaN(boxNumber));
-    
+
     return boxNumber;
 }
 
 function resetCanvas() {
-    let newCanvas = document.createElement("div");
-    newCanvas.classList.add("container");
-    etchasketch.replaceWith(newCanvas);
-    console.log(etchasketch);
+    while (etchasketch.firstChild) {
+        etchasketch.removeChild(etchasketch.lastChild);
+    }
 }
 
 createGrid(16);
