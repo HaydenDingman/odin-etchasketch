@@ -42,8 +42,9 @@ body {
     padding:8px 20px;
     box-sizing: border-box;
     border:solid goldenrod 3px;
+    background-color: antiquewhite;
     font-family: 'Pacifico', cursive;
-    font-size: 1em;
+    font-size: 1.5em;
     vertical-align: top;
     border-radius:10px;
 }
@@ -83,4 +84,16 @@ body {
     border:double gray 10px;
     border-radius:50%;
     margin-top:50px;
+}
+
+.footer {
+    color:antiquewhite;
+    font-family: "Acme", sans-serif;
+    font-size:1em;
+    padding:0px 0px 10px 0px;
+}
+
+a {
+    text-decoration: none;
+    color:antiquewhite;
 }
