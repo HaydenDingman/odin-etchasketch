@@ -1,25 +1,28 @@
 const etchasketch = document.querySelector(".container");
 
-for (let counter = 0; counter < (256); counter++) {
-    console.log("for loop");
-    let div = document.createElement("div");
-    div.addEventListener("mouseover", darken);
-    console.log("div created: " + counter);
-    div.setAttribute("style", "background-color:hsl(0, 0%, 95%); box-sizing:border-box; border:solid black 1px; flex:1 0 6.25%;")
-    etchasketch.appendChild(div);
-};
+let boxNumber = 16;
+
+function createGrid(boxNumber) {
+    for (let counter = 0; counter < (boxNumber * boxNumber); counter++) {
+        let div = document.createElement("div");
+        div.addEventListener("mouseover", darken);
+        console.log("div created: " + counter);
+        div.setAttribute("style", "background-color:hsl(0, 0%, 95%); box-sizing:border-box; border:solid black 1px; flex: 1 0 " + (100 / boxNumber) + "%;")
+        etchasketch.appendChild(div);
+    };
+}
 
 function darken(event) {
     let cellColor = this.style.backgroundColor;
     let darkenAmount = 25;
-    
+
     // Slices cellColor to extract single RGB value (242 to start)
-    cellColor = cellColor.slice(4,7);
+    cellColor = cellColor.slice(4, 7);
 
     // Repeat slice for only two characters once RGB value is below 100
     if (!Number(cellColor)) {
         cellColor = this.style.backgroundColor;
-        cellColor = cellColor.slice(4,6);
+        cellColor = cellColor.slice(4, 6);
     }
 
     // Subtracts darkenAmount from RGB value
@@ -31,3 +34,5 @@ function darken(event) {
 
     event.stopPropagation();
 }
+
+const resetButton = document.querySelector(".reset-button");
