@@ -48,7 +48,7 @@ function getUserBoxNumber() {
     let boxNumber = 0;
     do {
         boxNumber = parseInt(prompt("How many squares would you like per side? (Max 100)"));
-    } while (isNaN(boxNumber));
+    } while (isNaN(boxNumber) || boxNumber <= 0 || boxNumber > 100);
 
     return boxNumber;
 }
