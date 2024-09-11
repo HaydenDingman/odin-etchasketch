@@ -1,4 +1,4 @@
-const etchasketch = document.querySelector(".container");
+let etchasketch = document.querySelector(".container");
 
 function createGrid(boxNumber) {
     for (let counter = 0; counter < (boxNumber * boxNumber); counter++) {
@@ -33,16 +33,33 @@ function darken(event) {
     event.stopPropagation();
 }
 
-function reset () {
-    let boxNumber = 0;
-    do {
-        boxNumber = parseInt(prompt("How many squares would you like per side?"));
-    } while (isNaN(boxNumber));
-
-    etchasketch.remove();
-}
-
+// RESET CANVAS
 const resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", reset)
 
+function reset () {
+    let boxNumber = getUserBoxNumber();
+    resetCanvas();
+    console.log(boxNumber);
+    createGrid(boxNumber);
+}
+
+function getUserBoxNumber() {
+    let boxNumber = 0;
+    do {
+        boxNumber = parseInt(prompt("How many squares would you like per side? (Max 100)"));
+    } while (isNaN(boxNumber));
+    
+    return boxNumber;
+}
+
+function resetCanvas() {
+    let newCanvas = document.createElement("div");
+    newCanvas.classList.add("container");
+    etchasketch.replaceWith(newCanvas);
+    console.log(etchasketch);
+}
+
 createGrid(16);
+
+
