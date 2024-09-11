@@ -1,7 +1,5 @@
 const etchasketch = document.querySelector(".container");
 
-let boxNumber = 16;
-
 function createGrid(boxNumber) {
     for (let counter = 0; counter < (boxNumber * boxNumber); counter++) {
         let div = document.createElement("div");
@@ -35,4 +33,16 @@ function darken(event) {
     event.stopPropagation();
 }
 
+function reset () {
+    let boxNumber = 0;
+    do {
+        boxNumber = parseInt(prompt("How many squares would you like per side?"));
+    } while (isNaN(boxNumber));
+
+    etchasketch.remove();
+}
+
 const resetButton = document.querySelector(".reset-button");
+resetButton.addEventListener("click", reset)
+
+createGrid(16);
