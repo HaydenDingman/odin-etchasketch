@@ -12,13 +12,26 @@ body {
     background-color: red;
 }
 
-.header h1 {
-    color:rgb(253, 189, 105);
+.header {
+    color:rgb(253, 189, 105); 
+    display:flex;
     padding:20px 0px 0px 0px;
+    gap:20px;
+    align-items: center;
+}
+
+.header h1 {
     font-size: 3em;
     font-family: 'Pacifico', cursive;
     font-weight: 400;
     font-style: normal;
+}
+
+.header h2 {
+    font-family: "Acme", serif;
+    font-weight:300;
+    font-style:italic;
+    padding:10px 0px 0px 0px;
 }
 
 .reset {
@@ -45,9 +58,9 @@ body {
 }
 
 .wheels {
-    width:1300px;
+    width:1400px;
     display:flex;
-    padding:40px;
+    padding: 0px 0px 40px 0px;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -59,6 +72,7 @@ body {
     box-sizing: border-box;
     border:double grey 10px;
     border-radius:50%;
+    margin-top:50px;
 }
 
 .wheel-right {
@@ -68,4 +82,5 @@ body {
     box-sizing: border-box;
     border:double gray 10px;
     border-radius:50%;
+    margin-top:50px;
 }
