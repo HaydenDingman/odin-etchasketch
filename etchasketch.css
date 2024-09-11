@@ -14,13 +14,15 @@ body {
 }
 
 body h1 {
-    color:antiquewhite;
+    color:rgb(253, 189, 105);
     padding:20px 0px 0px 0px;
     font-size: 3em;
     font-family: 'Pacifico', cursive;
     font-weight: 400;
     font-style: normal;
 }
+
+
 
 .container {
     display:flex;
@@ -29,4 +31,25 @@ body h1 {
     height: 800px;
     background-color: hsl(0, 0%, 95%);
     margin:20px;
+}
+
+.wheels {
+    width:1300px;
+    display:flex;
+    padding:40px;
+}
+
+.wheel-left {
+    width:200px;
+    height:200px;
+    background-color:white;
+    margin-right:auto;
+    border-radius:50%;
+}
+
+.wheel-right {
+    width:200px;
+    height:200px;
+    background-color:white;
+    border-radius:50%;
 }
